@@ -75,8 +75,8 @@
 # 1.Clone the repository
 
 ```bash
-git clone https://github.com/your-username/swift-news.git
-cd swift-news
+git clone https://github.com/CoreTech7704/swiftnews.git
+cd swiftnews
 ```
 
 # 2. Install dependencies
