@@ -1,21 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import NewsCard from '../components/NewsCard';
 import { Helmet } from 'react-helmet';
+import { fetchNews } from '../lib/fetchNews'; // uses /api/news proxy
 
 export default function Home({ loadingBar }) {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    const fetchNews = async () => {
+    const load = async () => {
       try {
         if (loadingBar?.current) loadingBar.current.staticStart();
 
-        const API_KEY = process.env.REACT_APP_NEWS_API;
-        const res = await axios.get(
-          `https://gnews.io/api/v4/top-headlines?category=general&lang=en&max=6&apikey=${API_KEY}`
-        );
-        setArticles(res.data.articles);
+        // fetch 6 top headlines (via serverless proxy)
+        const items = await fetchNews({ country: 'in', category: 'general', max: 6, page: 1 });
+        setArticles(items);
       } catch (err) {
         console.error('Error fetching news:', err);
       } finally {
@@ -23,7 +21,7 @@ export default function Home({ loadingBar }) {
       }
     };
 
-    fetchNews();
+    load();
   }, [loadingBar]);
 
   return (
@@ -64,7 +62,7 @@ export default function Home({ loadingBar }) {
         <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 my-10">
           {articles.map((article, idx) => (
             <NewsCard
-              key={idx}
+              key={article.url ?? idx}
               title={article.title}
               description={article.description}
               image={article.image}
