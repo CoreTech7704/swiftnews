@@ -1,5 +1,6 @@
 // api/news.js
 // Vercel Serverless proxy for GNews
+
 export default async function handler(req, res) {
   try {
     const { country = "in", category = "general", page = "1", max = "12", lang = "en" } = req.query;
