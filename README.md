@@ -1,5 +1,7 @@
-# 📰 Swift News
-
+# 📰 Swift News  
+![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)
+![Vercel](https://img.shields.io/badge/Deployed-Vercel-black?logo=vercel)
+  
 > A modern, fast, and responsive news app built using **React**, **Tailwind CSS**, and **GNews API** — offering category and country filtering, infinite scroll, dark mode, and SEO optimization.
 
 🌐 **Live Demo**: [https://swiftnews.netlify.app](https://swiftnews.netlify.app)
