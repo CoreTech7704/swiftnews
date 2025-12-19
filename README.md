@@ -4,7 +4,7 @@
   
 > A modern, fast, and responsive news app built using **React**, **Tailwind CSS**, and **GNews API** — offering category and country filtering, infinite scroll, dark mode, and SEO optimization.
 
-🌐 **Live Demo**: [https://swiftnews.netlify.app](https://swiftnews.netlify.app)
+🌐 **Live Demo**: [https://swiftnews.netlify.app]([https://swiftnews.netlify.app](https://swiftnews-zeta.vercel.app/))
 
 ---
 
